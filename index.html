@@ -65,7 +65,7 @@ audio{width:100%;max-width:550px}footer{background:#171d2e;color:#fff;text-align
 
  <div class="card" style="text-align:center">
   <h3>🎵 A Song For You</h3>
-  <audio id="song" controls>
+  <audio id="songs" controls preload="auto">
   <source src="ab.mp3"/>
   </audio>
   <p>Tap ▶️ if the song doesn't start automatically.</p>
@@ -104,7 +104,8 @@ function unlock(){
  }
 }
 document.getElementById("passkey").addEventListener("keydown",e=>{if(e.key==="Enter")unlock()});
-function playSong(){document.getElementById("song").play().catch(()=>{});}
+function playSong(){
+  document.getElementById("songs").play().catch(()=>{});}
 function burst(){
  for(let i=0;i<45;i++){
   const e=document.createElement("span");e.textContent=["🎉","💖","✨","🎈","💕"][Math.floor(Math.random()*5)];
